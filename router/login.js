@@ -11,12 +11,14 @@ router.route('/process/login').post((req, res)=>{
     
     var paramId = req.body.id || req.query.id
     var paramPwn = req.body.pwn || req.query.pwn
+
+    res.render('signin', {dataId:paramId, dataPw:paramPwn})
     
-    res.writeHead('200', {'Content-Type':'text/html; charset=utf8'})
-    res.write('<h1>Responds</h1>');
-    res.write('<div><p> pram Id :'+ paramId+'</p></div>')
-    res.write('<div><p> pram PassWord :'+ paramPwn+'</p></div>')
-    res.end();
+    // res.writeHead('200', {'Content-Type':'text/html; charset=utf8'})
+    // res.write('<h1>Responds</h1>');
+    // res.write('<div><p> pram Id :'+ paramId+'</p></div>')
+    // res.write('<div><p> pram PassWord :'+ paramPwn+'</p></div>')
+    // res.end();
 })
 
 module.exports = router;
